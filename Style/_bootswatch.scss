@@ -1,95 +1,49 @@
-// Cyborg 5.0.2
+// Darkly 5.0.2
 // Bootswatch
 
 
 // Variables
 
-$web-font-path: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" !default;
+$web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" !default;
 @if $web-font-path {
   @import url($web-font-path);
 }
 
-// Navbar
+// Typography
 
-.navbar {
-  &.bg-primary {
-    border: 1px solid $gray-700;
-  }
-
-  &.bg-dark {
-    background-color: $body-bg !important;
-    border: 1px solid $gray-700;
-  }
-
-  &.bg-light {
-    background-color: $gray-500 !important;
-  }
-
-  &.fixed-top {
-    border-width: 0 0 1px;
-  }
-
-  &.fixed-bottom {
-    border-width: 1px 0 0;
-  }
-}
-
-// Buttons
-
-.btn {
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      @if $enable-gradients {
-        background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
-      } @else {
-        background-color: $value;
-      }
-    }
+.blockquote {
+  &-footer {
+    color: $gray-600;
   }
 }
 
 // Forms
 
-legend {
+.input-group-addon {
   color: $white;
 }
 
-.form-control {
-  background-clip: border-box;
-
-  &:disabled,
-  &[readonly] {
-    border-color: transparent;
-  }
+.form-floating > label {
+  color: $gray-700;
 }
 
 // Navs
 
 .nav-tabs,
 .nav-pills {
-  .nav-link {
+  .nav-link,
+  .nav-link.active,
+  .nav-link.active:focus,
+  .nav-link.active:hover,
+  .nav-item.open .nav-link,
+  .nav-item.open .nav-link:focus,
+  .nav-item.open .nav-link:hover {
     color: $white;
-
-    &:hover {
-      background-color: $gray-700;
-    }
-
-    &.disabled,
-    &.disabled:hover {
-      background-color: transparent;
-      color: $nav-link-disabled-color;
-    }
-
-    &.active {
-      background-color: $primary;
-    }
   }
 }
 
-.breadcrumb {
-  a {
-    color: $white;
-  }
+.breadcrumb a {
+  color: $white;
 }
 
 .pagination {
@@ -118,26 +72,5 @@ legend {
         background-color: $value;
       }
     }
-  }
-}
-
-.badge {
-  &.bg-dark {
-    color: $gray-900;
-  }
-}
-
-// Containers
-
-.list-group-item {
-
-  &:hover {
-    border-color: $primary;
-  }
-}
-
-.popover {
-  &-title {
-    border-bottom: none;
   }
 }
