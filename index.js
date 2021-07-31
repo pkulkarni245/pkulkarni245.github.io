@@ -1,13 +1,19 @@
 $(document).ready(function(){ 
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 100) { 
-            $('#scroll').fadeIn(); 
+            $('#back-to-top').fadeIn(); 
         } else { 
-            $('#scroll').fadeOut(); 
+            $('#back-to-top').fadeOut(); 
         } 
     }); 
-    $('#scroll').click(function(){ 
-        $("html, body").animate({ scrollTop: 0 }, 600); 
-        return false; 
-    }); 
 });
+
+function disableScrolling() {
+    setTimeout(function() {
+        document.body.style.overflow = 'hidden';
+    }, 3000);
+}
+  
+function enableScrolling() {
+    document.body.style.overflow = '';
+}
