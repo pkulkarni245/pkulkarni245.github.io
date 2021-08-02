@@ -1,5 +1,7 @@
 :root {
   --main-font-color: #cce7fc;
+  --main-font-color-translucent: #cce7fc50;
+  --translucent-black: #000000cc;
 }
 
 body {
@@ -21,6 +23,35 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--main-font-color);
+}
+
+.navbar-brand {
+  color: var(--main-font-color);
+}
+
+.navbar.bg-primary {
+  border: 1px solid #282828;
+}
+
+.navbar.bg-dark {
+  background-color: #060606 !important;
+  border: 1px solid #282828;
+}
+
+.nav-item {
+  color: var(--main-font-color);
+}
+
+.nav-link {
+  color: var(--main-font-color);
+}
+
+#navbar-link {
+  color: var(--main-font-color);
+}
+
+#navbar-link:hover {
+  color: #fff;
 }
 
 .card-header, .card-body, .card-title {
@@ -114,9 +145,159 @@ svg:hover {
       bottom: 10px;
       right: 10px;
       position: fixed;
+      visibility: hidden;
     }
 
     .dropdown-menu {
-      background-color: #00000050;
+      background-color: var(--translucent-black);
       border: 1px solid var(--main-font-color);
+    }
+
+    .btn-outline-primary {
+      color: var(--main-font-color);
+      border-color: var(--main-font-color);
+      font-weight: bold;
+    }
+
+    .btn-outline-primary:hover {
+      color: #000;
+      background-color: var(--main-font-color-translucent);
+    }
+
+    .card {
+      border: 1px var(--main-font-color) solid;
+      background-color: var(--translucent-black);
+    }
+
+    .bg-primary {
+      background-color: var(--translucent-black);
+    }
+
+    .card-outline-primary {
+      color: var(--main-font-color);
+      border-color: var(--main-font-color);
+    }
+
+    .card-link :hover {
+      color: #000;
+      background-color: var(--main-font-color);
+    }
+
+    h3 {
+      color: var(--main-font-color);
+    }
+
+
+
+    [data-tooltip] {
+      display: inline-block;/*bug fix*/
+      position: relative;
+      text-decoration: none;
+    }
+    [data-tooltip]:after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 130%;
+      right: 20%;
+      background: var(--main-font-color);
+      padding: 5px 15px;
+      color: #000;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
+      white-space: nowrap;
+      opacity: 0;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    [data-tooltip]:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid var(--main-font-color);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      opacity: 0;
+      right: 30%;
+      top: 120%;
+    }
+    [data-tooltip]:hover:after {
+      bottom: 100%;
+    }
+    [data-tooltip]:hover:before {
+      bottom: 70%;
+    }
+    [data-tooltip]:hover:after,
+    [data-tooltip]:hover:before {
+      opacity: 1;
+    }
+
+    .jumbotron {
+      display:block;
+      width: 100%;
+      margin: 0px auto;
+    }
+
+    .top-jumbotron {
+      height: 30em;
+      padding-top: 10em;
+      padding-bottom: 5em;
+      border-radius: 10px;
+      background-image: url(media/img.jpg);
+      background-size: cover;
+      margin-bottom: 1em;
+    }
+
+    .jumbotron-caption {
+      position: absolute;
+      bottom: 120px;
+      right: 2px;
+      font-size: 5px;
+      color: var(--main-font-color-translucent);
+    }
+
+    #footer {
+      background-image: url(media/favicon_io/favicon-16x16.png);
+      height:16px;
+      margin-bottom: 3em;
+    }
+
+    .btn {
+      font-weight: bold;
+    }
+
+    .btn-outline-danger:hover {
+      color:#000;
+    }
+
+    .display-picture, .jumbotron-display-picture {
+      position: absolute;
+      bottom: 35%;
+      left: 35%;
+      border-bottom-left-radius: 400%;
+      border-bottom-right-radius: 400%;
+      border-top-left-radius: 100%;
+      border-top-right-radius: 100%;
+    }
+
+    .jumbotron-dp-frame {
+      position: absolute;
+      bottom: 35%;
+      left: 35%;
+      background-color: var(--main-font-color);
+      width: 500px;
+      height: 500px;
     }
