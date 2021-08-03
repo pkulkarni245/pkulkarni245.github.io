@@ -1,6 +1,15 @@
+/*
+ *
+ *  MANUAL DEPENDENCIES
+ *
+ *  --main-font-color:
+ *  dp.png (frame), icon pack
+ *
+ */
+
 :root {
   --main-font-color: #cce7fc;
-  --main-font-color-translucent: #cce7fc50;
+  --main-font-color-translucent: #cce7fc8f;
   --translucent-black: #000000cc;
 }
 
@@ -25,6 +34,23 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--main-font-color);
 }
 
+.nav-item {
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+ .nav-item {
+  padding-left: 1em;
+  border: 1px solid var(--main-font-color-translucent);
+  background-color: #000000cc;
+ }
+ .navbar-nav .ms-md-auto {
+  padding-left: 1em;
+  
+  background-color: #000000cc;
+ }
+}
+
 .navbar-brand {
   color: var(--main-font-color);
 }
@@ -34,8 +60,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .navbar.bg-dark {
-  background-color: #060606 !important;
-  border: 1px solid #282828;
+  background-color: #000;
+  border-bottom: 1px solid var(--main-font-color);
 }
 
 .nav-item {
@@ -261,6 +287,12 @@ svg:hover {
       margin-bottom: 1em;
     }
 
+  @media only screen and (max-width: 600px) {
+    .top-jumbotron {
+      background-image: none;
+    }
+  }
+
     .jumbotron-caption {
       position: absolute;
       bottom: 120px;
@@ -268,6 +300,12 @@ svg:hover {
       font-size: 5px;
       color: var(--main-font-color-translucent);
     }
+
+  @media only screen and (max-width: 600px) {
+    .jumbotron-caption {
+      display: none;
+    }
+  }
 
     #footer {
       background-image: url(media/favicon_io/favicon-16x16.png);
@@ -279,25 +317,59 @@ svg:hover {
       font-weight: bold;
     }
 
-    .btn-outline-danger:hover {
-      color:#000;
+    .btn:hover {
+      color: var(--main-font-color);
+    }    
+
+    figure img {
+      vertical-align: top;
+    }
+
+    figure figcaption {
+      vertical-align: bottom;
+      text-align: center;
+      margin-top: 0.5em;
+    }
+
+    figure {
+      position: absolute;
+      max-width: 200px;
+      max-height: 200px;
+      bottom: calc(75% - 100px);
+      left: calc(50% - 100px);
     }
 
     .display-picture, .jumbotron-display-picture {
+      max-width: 200px;
+      height: auto;
+      border-bottom-left-radius: 100%;
+      border-bottom-right-radius: 100%;
+      border-top-left-radius: 100%;
+      border-top-right-radius: 100%;
+    }
+    
+    .jumbotron-display-picture-caption {
+      text-align: center;
+      font-size: 2em;
+      white-space: nowrap;
+      min-width: fit-content;
+      border-radius: 10%;
+    }    
+
+    /*
+    .display-picture, .jumbotron-display-picture {
       position: absolute;
-      bottom: 35%;
-      left: 35%;
-      border-bottom-left-radius: 400%;
-      border-bottom-right-radius: 400%;
+      max-width: 200px;
+      height: auto;
+      bottom: 50%;
+      left: calc(50% - 100px); //* Image width is 287px 
+      border-bottom-left-radius: 100%;
+      border-bottom-right-radius: 100%;
       border-top-left-radius: 100%;
       border-top-right-radius: 100%;
     }
 
-    .jumbotron-dp-frame {
-      position: absolute;
-      bottom: 35%;
-      left: 35%;
-      background-color: var(--main-font-color);
-      width: 500px;
-      height: 500px;
+    .jumbotron-display-picture-caption {
+      text-align: center;
     }
+    */
