@@ -18,6 +18,10 @@ body {
   color: var(--main-font-color);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--main-font-color);
+}
+
 .container-fluid {
   background-color: #000;
 }
@@ -185,9 +189,9 @@ svg:hover {
       font-weight: bold;
     }
 
-    .btn-outline-primary:hover {
-      color: #000;
-      background-color: var(--main-font-color-translucent);
+    a> .btn-outline-primary:hover {
+      background-color: var(--main-font-color);
+      color: #000000;
     }
 
     .card {

@@ -1,4 +1,6 @@
 $(document).ready(function(){ 
+    window.alert("\t\t\t\t\t\t\t\t\t\t\t\t\t\t Site Under Construction! \t\t\t\t\t\t\t\t\t\t\t\t\t\t\n Stay tuned for updates. Redirecting to LinkedIn profile...");
+    window.location.replace("https://www.linkedin.com/in/pavan-kulkarni-a9b433201/");
     bttButton = document.querySelector('#back-to-top');
     $(window).scroll(function(){ 
         if ($(this).scrollTop() > 100) { 
