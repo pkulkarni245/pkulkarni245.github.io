@@ -1,25 +1,28 @@
 /*
- *
+ *  COLOR PALETTE: https://colorhunt.co/palette/000000323232ff1e56ffac41
  *  MANUAL DEPENDENCIES
  *
- *  --main-font-color:
+ *  --tertiary-color:
  *  dp.png (frame), icon pack
  *
  */
 
 :root {
-  --main-font-color: #cce7fc;
-  --main-font-color-translucent: #cce7fc8f;
-  --translucent-black: #000000cc;
+  --primary-color: #000000;
+  --secondary-color: #323232;
+  --tertiary-color: #ffac41;
+  --quaternary-color: #ff1e56;
+  --quaternary-color-translucent: #ff1e568f;
+  --shade-black: #00000050;
 }
 
 body {
   background-color: #000;
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 .container-fluid {
@@ -31,32 +34,46 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 0 var(--main-font-color);
+  box-shadow: inset 0 0 0 var(--tertiary-color);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--main-font-color);
+  background-color: var(--tertiary-color);
+}
+
+.nav-link {
+  z-index: 1;
 }
 
 .nav-item {
   z-index: 1;
 }
 
+.double-down {
+  color: var(--tertiary-color);
+  position: absolute;
+  left: calc( 50% - 12px);
+  bottom: 2em;
+}
+
+.double-down:hover {
+  color: #fff;
+}
+
 @media only screen and (max-width: 600px) {
  .nav-item {
   padding-left: 1em;
-  border: 1px solid var(--main-font-color-translucent);
-  background-color: #000000cc;
+  border: 1px solid var(--tertiary-color-translucent);
+  background-color: var(--translucent-black);
  }
  .navbar-nav .ms-md-auto {
   padding-left: 1em;
-  
-  background-color: #000000cc;
+  background-color: var(--translucent-black);
  }
 }
 
 .navbar-brand {
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 .navbar.bg-primary {
@@ -65,19 +82,19 @@ body::-webkit-scrollbar-thumb {
 
 .navbar.bg-dark {
   background-color: #000;
-  border-bottom: 1px solid var(--main-font-color);
+  border-bottom: 1px solid var(--tertiary-color);
 }
 
 .nav-item {
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 .nav-link {
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 #navbar-link {
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 #navbar-link:hover {
@@ -85,7 +102,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card-header, .card-body, .card-title {
-  color: var(--main-font-color);
+  color: var(--tertiary-color);
 }
 
 .scrolled-down{
@@ -96,7 +113,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 svg {
-  fill:var(--main-font-color);
+  fill:var(--tertiary-color);
 }
 svg:hover {
   fill:#fff;
@@ -176,27 +193,29 @@ svg:hover {
       right: 10px;
       position: fixed;
       visibility: hidden;
+      z-index: 1;
     }
 
     .dropdown-menu {
       background-color: var(--translucent-black);
-      border: 1px solid var(--main-font-color);
+      border: 1px solid var(--tertiary-color);
     }
 
     .btn-outline-primary {
-      color: var(--main-font-color);
-      border-color: var(--main-font-color);
+      color: var(--tertiary-color);
+      border-color: var(--tertiary-color);
       font-weight: bold;
     }
 
     a> .btn-outline-primary:hover {
-      background-color: var(--main-font-color);
+      background-color: var(--tertiary-color);
       color: #000000;
+      border-color: var(--tertiary-color);
     }
 
     .card {
-      border: 1px var(--main-font-color) solid;
-      background-color: var(--translucent-black);
+      border: 1px var(--tertiary-color) solid;
+      background-color: var(--primary-color);
     }
 
     .bg-primary {
@@ -204,17 +223,17 @@ svg:hover {
     }
 
     .card-outline-primary {
-      color: var(--main-font-color);
-      border-color: var(--main-font-color);
+      color: var(--tertiary-color);
+      border-color: var(--tertiary-color);
     }
 
     .card-link :hover {
       color: #000;
-      background-color: var(--main-font-color);
+      background-color: var(--tertiary-color);
     }
 
     h3 {
-      color: var(--main-font-color);
+      color: var(--tertiary-color);
     }
 
 
@@ -229,7 +248,7 @@ svg:hover {
       position: absolute;
       top: 130%;
       right: 20%;
-      background: var(--main-font-color);
+      background: var(--tertiary-color);
       padding: 5px 15px;
       color: #000;
       -webkit-border-radius: 10px;
@@ -252,7 +271,7 @@ svg:hover {
       position: absolute;
       width: 0;
       height: 0;
-      border-bottom: 10px solid var(--main-font-color);
+      border-bottom: 10px solid var(--tertiary-color);
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       -webkit-transition: all 0.5s ease;
@@ -288,33 +307,55 @@ svg:hover {
       border-radius: 10px;
       background-image: url(media/img.jpg);
       background-size: cover;
-      margin-bottom: 1em;
+      margin-bottom: 10em;
     }
 
   @media only screen and (max-width: 600px) {
     .top-jumbotron {
-      background-image: none;
+      background-image: url(media/img_small.jpg);
     }
   }
 
     .jumbotron-caption {
       position: absolute;
-      bottom: 120px;
+      bottom: 18%;
       right: 2px;
-      font-size: 5px;
-      color: var(--main-font-color-translucent);
+      font-size: 10px;
+      color: var(--tertiary-color-translucent);
+    }
+
+    @media only screen and (min-width: 600.01px) {
+      .jumbotron-caption-small {
+        display: none;
+      }
     }
 
   @media only screen and (max-width: 600px) {
     .jumbotron-caption {
       display: none;
     }
+    .jumbotron-caption-small {
+      position: absolute;
+      bottom: 22%;
+      right: 2px;
+      font-size: 10px;
+      color: var(--tertiary-color-translucent);
+    }
   }
 
-    #footer {
+    footer {
       background-image: url(media/favicon_io/favicon-16x16.png);
       height:16px;
-      margin-bottom: 3em;
+    }
+
+    .footer-text {
+      padding-bottom: 1em;
+      color: var(--tertiary-color);
+      display: inline-block;
+      margin-top: 1.5em;
+      text-align: center;
+      margin-left: 0px;
+      margin-right: 0px;
     }
 
     .btn {
@@ -322,7 +363,7 @@ svg:hover {
     }
 
     .btn:hover {
-      color: var(--main-font-color);
+      color: var(--tertiary-color);
     }    
 
     figure img {
@@ -332,14 +373,15 @@ svg:hover {
     figure figcaption {
       vertical-align: bottom;
       text-align: center;
-      margin-top: 0.5em;
+      margin-top: 6%;
+      background-color: var(--shade-black);
     }
 
     figure {
       position: absolute;
       max-width: 200px;
       max-height: 200px;
-      bottom: calc(75% - 100px);
+      bottom: calc(65%);
       left: calc(50% - 100px);
     }
 
@@ -353,12 +395,33 @@ svg:hover {
     }
     
     .jumbotron-display-picture-caption {
+      padding: 2px;
       text-align: center;
       font-size: 2em;
       white-space: nowrap;
       min-width: fit-content;
-      border-radius: 10%;
+      border-radius: 0.25rem;
+      border-bottom-left-radius: 0rem;
+      border-bottom-right-radius: 0rem;
     }    
+
+    .jumbotron-description {
+      padding-top: 2px;
+      text-align: center;
+      position: relative;
+      top: 23%;
+      border-radius: 0.25rem;
+      background-color: var(--shade-black);
+    }
+
+    @media only screen and (max-width: 600px) {
+      figure figcaption {
+        background-color: var(shade-black);
+      }
+      .jumbotron-description {
+        background-color: var(--shade-black);
+      }
+    }
 
     /*
     .display-picture, .jumbotron-display-picture {
