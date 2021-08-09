@@ -82,7 +82,7 @@ body::-webkit-scrollbar-thumb {
 
 .navbar.bg-dark {
   background-color: #000;
-  border-bottom: 1px solid var(--tertiary-color);
+  border: 1px solid var(--tertiary-color);
 }
 
 .nav-item {
